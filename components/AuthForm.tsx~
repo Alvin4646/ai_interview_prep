@@ -59,7 +59,7 @@ const AuthForm = ({type}: { type: FormType }) => {
                 router.push("/sign-in");
             } else {
                 const {email, password} = values;
-
+                console.log(email,password)
                 const userCredentials = await  signInWithEmailAndPassword(auth,email, password);
                 const idToken= await userCredentials.user.getIdToken()
                 if(!idToken){
